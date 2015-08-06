@@ -9,7 +9,7 @@ github.listen();
 
 github.on('partyhard-www:refs/heads/master', function (event, data) {
   console.log('Change on master');
-  execFile('sh /home/partyhard/partyhard-www/hook.sh', function(error, stdout, stderr) {
+  execFile('git pull --rebase', function(error, stdout, stderr) {
     if (error) console.error(error);
     console.log('Hook.sh completed');
   });
